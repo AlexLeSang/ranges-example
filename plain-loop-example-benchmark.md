@@ -1,3 +1,3 @@
 | Command | Mean [ms] | Min…Max [ms] |
 |:---|---:|---:|
-| `./plain-loop-example` | 3871.8 ± 30.2 | 3823.5…3917.8 |
+| `./plain-loop-example` | 3941.6 ± 66.5 | 3820.4…4030.2 |
