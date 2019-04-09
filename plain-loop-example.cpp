@@ -6,7 +6,7 @@
 
 int main(int, char **) {
   const auto numbers = generate_sequence(1e8);
-  auto number =
+  const auto number =
       plain_loop::number_of_squared_integers_divisible_by_3_5_and_7(numbers);
 
   return number;

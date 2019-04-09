@@ -6,7 +6,7 @@ Plain loop allows compiler to generate more optimized, vectorized code than boos
 
 ## Hyperfine benchmark
 ```
-hyperfine -i --export-markdown boost-range-v2-example-benchmark.md ./boost-range-v2-example 
+hyperfine -i --export-markdown boost-range-v2-example-benchmark.md ./boost-range-v2-example
 ```
 
 | Command | Mean [ms] | Min…Max [ms] |
@@ -14,7 +14,7 @@ hyperfine -i --export-markdown boost-range-v2-example-benchmark.md ./boost-range
 | `./boost-range-v2-example` | 337.1 ± 4.6 | 331.2…345.7 |
 
 ```
-hyperfine -i --export-markdown plain-loop-example-benchmark.md ./plain-loop-example 
+hyperfine -i --export-markdown plain-loop-example-benchmark.md ./plain-loop-example
 ```
 | Command | Mean [ms] | Min…Max [ms] |
 |:---|---:|---:|
@@ -82,6 +82,32 @@ BM_BoostRangev2/1073741824 2218101890 ns   2212702026 ns            1
 
 Now, this makes more sence that Hyperfine benchmark. Vectorised code is faster for reasonalble data sizes.
 
+Now let's see how range v3 library compares to the boost range v2 and out plain loop example. The library can be found here: [RangeV3](https://github.com/ericniebler/range-v3 ).
 
-
-
+RangeV3
+```
+ ./benchmark/range-v3-benchmark
+2019-04-09 21:19:26
+Running /home/halushko/Projects/boost-range-v2-example/benchmark/range-v3-benchmark
+Run on (8 X 3500 MHz CPU s)
+CPU Caches:
+  L1 Data 32K (x4)
+  L1 Instruction 32K (x4)
+  L2 Unified 256K (x4)
+  L3 Unified 6144K (x1)
+Load Average: 22.34, 25.63, 12.72
+***WARNING*** CPU scaling is enabled, the benchmark real time measurements may be noisy and will incur extra overhead.
+----------------------------------------------------------------
+Benchmark                      Time             CPU   Iterations
+----------------------------------------------------------------
+BM_RangeV3/8                8.92 ns         8.91 ns     75522472
+BM_RangeV3/64               54.9 ns         54.9 ns     11937469
+BM_RangeV3/512               461 ns          459 ns      1541638
+BM_RangeV3/4096             3484 ns         3478 ns       189047
+BM_RangeV3/32768           26731 ns        26691 ns        26908
+BM_RangeV3/262144         217764 ns       217417 ns         3402
+BM_RangeV3/2097152       1900792 ns      1897238 ns          380
+BM_RangeV3/16777216     15308089 ns     15242002 ns           48
+BM_RangeV3/134217728   120456128 ns    120027103 ns            6
+BM_RangeV3/1073741824 1331641579 ns   1051120255 ns            1
+```

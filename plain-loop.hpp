@@ -1,4 +1,5 @@
 #pragma once
+
 #include <vector>
 
 namespace plain_loop {
@@ -13,4 +14,4 @@ decltype(auto) number_of_squared_integers_divisible_by_3_5_and_7(
   }
   return counter;
 }
-} // namespace simple_loop
+} // namespace plain_loop
